@@ -1,0 +1,32 @@
+{
+  "prediction": "FAKE",
+  "confidence": 92,
+  "writingStyleScore": 38,
+  "exaggerationLevel": 79,
+  "entities": [
+    { "person": "Dr. Alan Pierce", "place": "Washington", "organization": "Global Health Alliance" },
+    { "person": "Nina Clark", "place": "London", "organization": "World Data Forum" }
+  ],
+  "linguistic": {
+    "posDistribution": [
+      { "label": "Nouns", "value": 28 },
+      { "label": "Verbs", "value": 24 },
+      { "label": "Adjectives", "value": 21 },
+      { "label": "Adverbs", "value": 16 }
+    ],
+    "sentenceComplexity": 64
+  },
+  "semanticSimilarity": {
+    "trustedSimilarity": 41,
+    "headlines": [
+      "Public Health Board Issues Clarification on Vaccine Policy",
+      "Independent Audit Finds No Evidence for Viral Claim",
+      "Experts Reject Edited Clip Shared on Social Platforms"
+    ]
+  },
+  "suspiciousIndicators": [
+    "shocking hidden truth",
+    "officials refuse to answer",
+    "what they never told you"
+  ]
+}

@@ -1,5 +1,16 @@
+HEAD
 node_modules
 dist
 .env
 .vscode
 .DS_Store
+=======
+.idea/
+
+.venv/
+
+backend/.env
+
+backend/db.sqlite3
+**/__pycawche__/
+bf2bd5ea03bd160fe02b214a593844aa107d9436

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Skeleton from '../components/ui/Skeleton';
@@ -7,6 +7,7 @@ import PageTransition from '../components/layout/PageTransition';
 import { getHistory } from '../services/api';
 
 function HistoryPage() {
+  const navigate = useNavigate();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -16,6 +17,11 @@ function HistoryPage() {
       setLoading(false);
     });
   }, []);
+
+  const openHistoryItem = (item) => {
+    localStorage.setItem('latestAnalysis', JSON.stringify(item.analysis));
+    navigate('/detailed-analysis');
+  };
 
   return (
     <PageTransition>
@@ -41,7 +47,9 @@ function HistoryPage() {
                   <span className={`rounded-full px-3 py-1 text-xs font-semibold ${item.result === 'REAL' ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300' : 'bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300'}`}>
                     {item.result}
                   </span>
-                  <Link to="/detailed-analysis"><Button variant="secondary" className="px-4 py-2 text-sm">View Details</Button></Link>
+                  <Button variant="secondary" className="px-4 py-2 text-sm" onClick={() => openHistoryItem(item)}>
+                    View Details
+                  </Button>
                 </div>
               </Card>
             ))}
